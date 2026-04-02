@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# uv / virtualenv
+.venv/
+
+# Django
+db.sqlite3
+staticfiles/
+media/
+
+# OS / Editor
+.DS_Store
+.idea/
+*.sw?
+.ruff_cache/

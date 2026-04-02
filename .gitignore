@@ -1,0 +1,5 @@
+# Ignore local environment files
+.claude/
+.vscode/
+
+# Note: backend and frontend have their own .gitignore files, so we don't need to ignore node_modules or dist here.

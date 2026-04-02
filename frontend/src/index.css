@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+:root {
+  --color-bg: #f8f9fa;
+  --color-nav-bg: transparent;
+  --color-nav-border: #dde3ee;
+  --color-border: #dde3ee;
+  --color-text: #1e293b;
+  --color-text-muted: #64748b;
+  --color-text-nav: #000000;
+  --color-text-nav-hover: #0e7490;
+  --color-accent: #0e7490;
+
+  /* Job status colors */
+  --color-status-pending: #d97706;
+  --color-status-pending-bg: #fef3c7;
+  --color-status-pending-border: #fcd34d;
+  --color-status-running: #2563eb;
+  --color-status-running-bg: #dbeafe;
+  --color-status-running-border: #93c5fd;
+  --color-status-completed: #059669;
+  --color-status-completed-bg: #d1fae5;
+  --color-status-completed-border: #6ee7b7;
+  --color-status-failed: #dc2626;
+  --color-status-failed-bg: #fee2e2;
+  --color-status-failed-border: #fca5a5;
+  --color-status-unknown: #64748b;
+  --color-status-unknown-bg: #f1f5f9;
+  --color-status-unknown-border: #cbd5e1;
+
+  /* Card */
+  --color-card-bg: #ffffff;
+  --color-card-border: #e2e8f0;
+  --color-card-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.07), 0 1px 2px -1px rgb(0 0 0 / 0.05);
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.nav-link {
+  position: relative;
+  text-decoration: none;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.25s ease;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: right;
+}
+
+.nav-link-external {
+  display: inline-block;
+  padding: 0.2rem 0.8rem;
+  border-radius: 3px;
+  background-color: #000000;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.nav-link-external:hover {
+  background-color: var(--color-accent);
+  color: #ffffff;
+}
+
+.job-list-scroll {
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: rgb(156 163 175 / 0.5) transparent;
+}
+
+.job-list-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.job-list-scroll::-webkit-scrollbar-button,
+.job-list-scroll::-webkit-scrollbar-button:vertical:decrement,
+.job-list-scroll::-webkit-scrollbar-button:vertical:increment {
+  display: none;
+  height: 0;
+  width: 0;
+  background: none;
+}
+
+.job-list-scroll::-webkit-scrollbar-track {
+  background: rgb(226 232 240 / 0.3);
+  border-radius: 99px;
+  margin-block: 10px;
+}
+
+.job-list-scroll::-webkit-scrollbar-thumb {
+  background: rgb(148 163 184 / 0.6);
+  border-radius: 99px;
+}
+
+.job-list-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgb(100 116 139 / 0.8);
+}
